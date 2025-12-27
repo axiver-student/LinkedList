@@ -55,6 +55,12 @@ class list{
             cout<<"lisked list empty";
             return;
         }
+
+        if(head == tail){
+        delete head;
+        head = tail = NULL;
+        return;
+        }
         head=head->next;
         temp->next=NULL;
         delete temp;
