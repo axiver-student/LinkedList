@@ -50,18 +50,37 @@ class Doublylist{
             return;
         }
 
-        //only in doublt linked list 
         if(head == tail){
-        delete head;
-        head = NULL;
-        tail = NULL;
-        return;
+            delete head;
+            head = NULL;
+            tail = NULL;
+            return;
         }
 
         Node *del = head;
         head = head->next;
         head->prev = NULL;
         delete del;
+    }
+
+    void pop_back(){
+         if(tail==NULL){
+            return;
+        }
+
+        if(head == tail){
+            delete head;
+            head = NULL;
+            tail = NULL;
+            return;
+        }
+
+        Node *del = tail;
+        tail = tail->prev;
+        tail->next = NULL;
+        delete del;
+
+
     }
 
     void display_L_R(){
